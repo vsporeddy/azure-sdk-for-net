@@ -56,6 +56,8 @@ namespace Microsoft.Azure.Management.Sql
                 new Tuple<string, string, string>("Sql", "JobVersions", "2017-03-01-preview"),
                 new Tuple<string, string, string>("Sql", "Jobs", "2017-03-01-preview"),
                 new Tuple<string, string, string>("Sql", "LongTermRetentionBackups", "2017-03-01-preview"),
+                new Tuple<string, string, string>("Sql", "MaintenanceWindowOptions", "2017-10-01-preview"),
+                new Tuple<string, string, string>("Sql", "MaintenanceWindows", "2017-10-01-preview"),
                 new Tuple<string, string, string>("Sql", "ManagedDatabases", "2017-03-01-preview"),
                 new Tuple<string, string, string>("Sql", "ManagedInstanceTdeCertificates", "2017-10-01-preview"),
                 new Tuple<string, string, string>("Sql", "ManagedInstances", "2015-05-01-preview"),
