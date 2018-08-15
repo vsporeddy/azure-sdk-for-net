@@ -51,7 +51,7 @@ namespace Microsoft.Azure.Management.Sql.Models
         /// values include: 'NotReady', 'Error', 'Warning', 'Progressing',
         /// 'Good'</param>
         /// <param name="schema">Sync schema of the sync group.</param>
-        public SyncGroup(string id = default(string), string name = default(string), string type = default(string), int? interval = default(int?), System.DateTime? lastSyncTime = default(System.DateTime?), SyncConflictResolutionPolicy? conflictResolutionPolicy = default(SyncConflictResolutionPolicy?), string syncDatabaseId = default(string), string hubDatabaseUserName = default(string), string hubDatabasePassword = default(string), SyncGroupState? syncState = default(SyncGroupState?), SyncGroupSchema schema = default(SyncGroupSchema))
+        public SyncGroup(string id = default(string), string name = default(string), string type = default(string), int? interval = default(int?), System.DateTime? lastSyncTime = default(System.DateTime?), string conflictResolutionPolicy = default(string), string syncDatabaseId = default(string), string hubDatabaseUserName = default(string), string hubDatabasePassword = default(string), string syncState = default(string), SyncGroupSchema schema = default(SyncGroupSchema))
             : base(id, name, type)
         {
             Interval = interval;
@@ -87,7 +87,7 @@ namespace Microsoft.Azure.Management.Sql.Models
         /// values include: 'HubWin', 'MemberWin'
         /// </summary>
         [JsonProperty(PropertyName = "properties.conflictResolutionPolicy")]
-        public SyncConflictResolutionPolicy? ConflictResolutionPolicy { get; set; }
+        public string ConflictResolutionPolicy { get; set; }
 
         /// <summary>
         /// Gets or sets ARM resource id of the sync database in the sync
@@ -113,7 +113,7 @@ namespace Microsoft.Azure.Management.Sql.Models
         /// 'NotReady', 'Error', 'Warning', 'Progressing', 'Good'
         /// </summary>
         [JsonProperty(PropertyName = "properties.syncState")]
-        public SyncGroupState? SyncState { get; private set; }
+        public string SyncState { get; private set; }
 
         /// <summary>
         /// Gets or sets sync schema of the sync group.

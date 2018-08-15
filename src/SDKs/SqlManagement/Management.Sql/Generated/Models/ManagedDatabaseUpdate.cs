@@ -71,7 +71,7 @@ namespace Microsoft.Azure.Management.Sql.Models
         /// <param name="failoverGroupId">Instance Failover Group resource
         /// identifier that this managed database belongs to.</param>
         /// <param name="tags">Resource tags.</param>
-        public ManagedDatabaseUpdate(string collation = default(string), ManagedDatabaseStatus? status = default(ManagedDatabaseStatus?), System.DateTime? creationDate = default(System.DateTime?), System.DateTime? earliestRestorePoint = default(System.DateTime?), System.DateTime? restorePointInTime = default(System.DateTime?), string defaultSecondaryLocation = default(string), CatalogCollationType? catalogCollation = default(CatalogCollationType?), ManagedDatabaseCreateMode? createMode = default(ManagedDatabaseCreateMode?), string storageContainerUri = default(string), string sourceDatabaseId = default(string), string storageContainerSasToken = default(string), string failoverGroupId = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>))
+        public ManagedDatabaseUpdate(string collation = default(string), string status = default(string), System.DateTime? creationDate = default(System.DateTime?), System.DateTime? earliestRestorePoint = default(System.DateTime?), System.DateTime? restorePointInTime = default(System.DateTime?), string defaultSecondaryLocation = default(string), string catalogCollation = default(string), string createMode = default(string), string storageContainerUri = default(string), string sourceDatabaseId = default(string), string storageContainerSasToken = default(string), string failoverGroupId = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>))
         {
             Collation = collation;
             Status = status;
@@ -105,7 +105,7 @@ namespace Microsoft.Azure.Management.Sql.Models
         /// 'Offline', 'Shutdown', 'Creating', 'Inaccessible'
         /// </summary>
         [JsonProperty(PropertyName = "properties.status")]
-        public ManagedDatabaseStatus? Status { get; private set; }
+        public string Status { get; private set; }
 
         /// <summary>
         /// Gets creation date of the database.
@@ -139,7 +139,7 @@ namespace Microsoft.Azure.Management.Sql.Models
         /// include: 'DATABASE_DEFAULT', 'SQL_Latin1_General_CP1_CI_AS'
         /// </summary>
         [JsonProperty(PropertyName = "properties.catalogCollation")]
-        public CatalogCollationType? CatalogCollation { get; set; }
+        public string CatalogCollation { get; set; }
 
         /// <summary>
         /// Gets or sets managed database create mode. PointInTimeRestore:
@@ -152,7 +152,7 @@ namespace Microsoft.Azure.Management.Sql.Models
         /// 'PointInTimeRestore'
         /// </summary>
         [JsonProperty(PropertyName = "properties.createMode")]
-        public ManagedDatabaseCreateMode? CreateMode { get; set; }
+        public string CreateMode { get; set; }
 
         /// <summary>
         /// Gets or sets conditional. If createMode is RestoreExternalBackup,

@@ -60,7 +60,7 @@ namespace Microsoft.Azure.Management.Sql.Models
         /// 'UnProvisioned', 'Provisioning', 'Provisioned', 'ProvisionFailed',
         /// 'DeProvisioning', 'DeProvisioned', 'DeProvisionFailed',
         /// 'Reprovisioning', 'ReprovisionFailed', 'UnReprovisioned'</param>
-        public SyncMember(string id = default(string), string name = default(string), string type = default(string), SyncMemberDbType? databaseType = default(SyncMemberDbType?), string syncAgentId = default(string), System.Guid? sqlServerDatabaseId = default(System.Guid?), string serverName = default(string), string databaseName = default(string), string userName = default(string), string password = default(string), SyncDirection? syncDirection = default(SyncDirection?), SyncMemberState? syncState = default(SyncMemberState?))
+        public SyncMember(string id = default(string), string name = default(string), string type = default(string), string databaseType = default(string), string syncAgentId = default(string), System.Guid? sqlServerDatabaseId = default(System.Guid?), string serverName = default(string), string databaseName = default(string), string userName = default(string), string password = default(string), string syncDirection = default(string), string syncState = default(string))
             : base(id, name, type)
         {
             DatabaseType = databaseType;
@@ -85,7 +85,7 @@ namespace Microsoft.Azure.Management.Sql.Models
         /// include: 'AzureSqlDatabase', 'SqlServerDatabase'
         /// </summary>
         [JsonProperty(PropertyName = "properties.databaseType")]
-        public SyncMemberDbType? DatabaseType { get; set; }
+        public string DatabaseType { get; set; }
 
         /// <summary>
         /// Gets or sets ARM resource id of the sync agent in the sync member.
@@ -129,7 +129,7 @@ namespace Microsoft.Azure.Management.Sql.Models
         /// include: 'Bidirectional', 'OneWayMemberToHub', 'OneWayHubToMember'
         /// </summary>
         [JsonProperty(PropertyName = "properties.syncDirection")]
-        public SyncDirection? SyncDirection { get; set; }
+        public string SyncDirection { get; set; }
 
         /// <summary>
         /// Gets sync state of the sync member. Possible values include:
@@ -141,7 +141,7 @@ namespace Microsoft.Azure.Management.Sql.Models
         /// 'Reprovisioning', 'ReprovisionFailed', 'UnReprovisioned'
         /// </summary>
         [JsonProperty(PropertyName = "properties.syncState")]
-        public SyncMemberState? SyncState { get; private set; }
+        public string SyncState { get; private set; }
 
     }
 }

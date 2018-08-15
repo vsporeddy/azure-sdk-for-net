@@ -392,16 +392,6 @@ namespace Microsoft.Azure.Management.Sql
         public virtual IManagedInstanceTdeCertificatesOperations ManagedInstanceTdeCertificates { get; private set; }
 
         /// <summary>
-        /// Gets the IMaintenanceWindowsOperations.
-        /// </summary>
-        public virtual IMaintenanceWindowsOperations MaintenanceWindows { get; private set; }
-
-        /// <summary>
-        /// Gets the IMaintenanceWindowOptionsOperations.
-        /// </summary>
-        public virtual IMaintenanceWindowOptionsOperations MaintenanceWindowOptions { get; private set; }
-
-        /// <summary>
         /// Initializes a new instance of the SqlManagementClient class.
         /// </summary>
         /// <param name='handlers'>
@@ -666,8 +656,6 @@ namespace Microsoft.Azure.Management.Sql
             BackupShortTermRetentionPolicies = new BackupShortTermRetentionPoliciesOperations(this);
             TdeCertificates = new TdeCertificatesOperations(this);
             ManagedInstanceTdeCertificates = new ManagedInstanceTdeCertificatesOperations(this);
-            MaintenanceWindows = new MaintenanceWindowsOperations(this);
-            MaintenanceWindowOptions = new MaintenanceWindowOptionsOperations(this);
             BaseUri = new System.Uri("https://management.azure.com");
             AcceptLanguage = "en-US";
             LongRunningOperationRetryTimeout = 30;
