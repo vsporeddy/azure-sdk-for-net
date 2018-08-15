@@ -386,15 +386,5 @@ namespace Microsoft.Azure.Management.Sql
         /// </summary>
         IManagedInstanceTdeCertificatesOperations ManagedInstanceTdeCertificates { get; }
 
-        /// <summary>
-        /// Gets the IMaintenanceWindowsOperations.
-        /// </summary>
-        IMaintenanceWindowsOperations MaintenanceWindows { get; }
-
-        /// <summary>
-        /// Gets the IMaintenanceWindowOptionsOperations.
-        /// </summary>
-        IMaintenanceWindowOptionsOperations MaintenanceWindowOptions { get; }
-
     }
 }
